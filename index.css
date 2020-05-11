@@ -1,0 +1,131 @@
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-image: url(https://source.unsplash.com/random);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+
+
+
+.name{
+    position: absolute;
+    text-align: center;
+    font-weight: 100;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(0, 0, 0);
+    font-family: 'Righteous', cursive;
+    text-shadow: 2px 2px 2px white;
+}
+
+
+
+
+.clock{
+    width: 300px;
+    height: 300px;
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    position: relative;
+
+}
+
+
+
+
+
+
+
+
+.number{
+
+    font-family: 'Poiret One', cursive;
+    stroke: black;
+    font-size: 1.5rem;
+    --rutation:0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background-color: blueviolet; */
+    text-align: center;
+    transform:  rotate(var(--rotation));
+}
+.num1{--rotation:30deg;}
+.num2{--rotation:60deg;}
+.num3{--rotation:90deg;}
+.num4{--rotation:120deg;}
+.num5{--rotation:150deg;}
+.num6{--rotation:180deg;}
+.num7{--rotation:210deg;}
+.num8{--rotation:240deg;}
+.num9{--rotation:270deg;}
+.num10{--rotation:300deg;}
+.num11{--rotation:330deg;}
+
+
+.hand{
+    --rotation:0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%) rotate(calc(var(--rotation)*1deg));
+    transform-origin: bottom;
+    height: 40%;
+    width: 10px;
+    background-color: black;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    z-index: 10;
+    
+}
+
+.min{
+    position: absolute;
+    z-index: 11;
+    height: 40%;
+    width: 5px;
+    background-color: black;
+    border: 1px solid white;
+}
+.sec{
+    position: absolute;
+    z-index: 13;
+    height: 45%;
+    width: 2px;
+ background-color: red;
+}
+.hour{
+    width: 8px;
+    height: 35%;
+    border: 1px solid white;
+}
+
+
+
+.clock::after{
+    content: "";
+    position: absolute ;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border: 2px solid white;
+    z-index: 33;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) ;
+    border-radius: 50%;
+}
