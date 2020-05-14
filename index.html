@@ -1,57 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Analog Clock</title>
-    <link rel="stylesheet" href="index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
-</head>
-<!-- <script src="clock.js"></script> -->
-<body>
-    <div class="clock"><p class="name">Kulvinder Singh</p>
-<div class="hand hour" date-hour-hand></div>
-<div class="hand min" date-minutes-hand></div>
-<div class="hand sec"  date-seconds-hand></div>
-<div class="number num1">|</div>
-<div class="number num2">|</div>
-<div class="number num3">3</div>
-<div class="number num4">|</div>
-<div class="number num5">|</div>
-<div class="number num6">9</div>
-<div class="number num7">|</div>
-<div class="number num8">|</div>
-<div class="number num9">9</div>
-<div class="number num10">|</div>
-<div class="number num11">|</div>
-<div class="number num12">12</div>
-
-
+    <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <!-- <script src="clock.js"></script> -->
+  <body>
+    <div class="clock">
+      <p class="name">Kulvinder Singh</p>
+      <div class="hand hour" date-hour-hand></div>
+      <div class="hand min" date-minutes-hand></div>
+      <div class="hand sec" date-seconds-hand></div>
+      <div class="number num1">|</div>
+      <div class="number num2">|</div>
+      <div class="number num3">3</div>
+      <div class="number num4">|</div>
+      <div class="number num5">|</div>
+      <div class="number num6">9</div>
+      <div class="number num7">|</div>
+      <div class="number num8">|</div>
+      <div class="number num9">9</div>
+      <div class="number num10">|</div>
+      <div class="number num11">|</div>
+      <div class="number num12">12</div>
     </div>
-    
-</body>
-<script>
-    
-    setInterval(clock,1000);
-   const hourHand= document.querySelector('[date-hour-hand]');
-   const minutesHand= document.querySelector('[date-minutes-hand]');
-   const secondHand= document.querySelector('[date-seconds-hand]');
-
-    function clock(){
-       const currentDate=new Date();
-       const secondRatio=currentDate.getSeconds()/60;
-       const minutesRatio=(secondRatio + currentDate.getMinutes())/60;
-       const hoursRatio=(minutesRatio + currentDate.getHours())/12;
-
-       run(secondHand,secondRatio);
-       run(minutesHand, minutesRatio);
-       run(hourHand,hoursRatio);
-
-    }
-    function run(element, rate){
-        element.style.setProperty('--rotation',rate * 360);
-    }
-
-</script>
+  </body>
+  <script src="index.js"></script>
 </html>
